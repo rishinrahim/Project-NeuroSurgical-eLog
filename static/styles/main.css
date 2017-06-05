@@ -1,0 +1,188 @@
+/******************************MAINBODY******************************/
+/************************************************************************/
+
+/**************SETTINGS PAGE/adm*********************************************/
+.addlog
+{margin-left:177px;
+}
+
+.acct
+{margin-top:-30px;}
+
+/******************VIEWLOG PAGE******************************************/
+.adminviewlog
+{min-width:100%;
+min-height:100%;
+}
+.log-table-body
+{width:100%;
+max-width:1365px;
+height:540px;
+border-top:1px solid #e1e1e1;overflow:scroll;}
+.expandview{overflow:scroll;}
+.admin-log-table-body
+{width:100%;
+max-width:1365px;
+height:490px;
+overflow:scroll;
+border-top:1px solid #e1e1e1;}
+/******************************body******************************/
+.mainbody
+{min-height:400px;
+min-width:768px;
+margin-left:100px;
+margin-top:50px;
+}
+.adminbody
+{min-height:565px;
+min-width:768px;
+}
+.mbody
+{margin-top:30px;margin-left:100px;padding-bottom:20px;}
+.mbody2
+{margin-top:20px;margin-left:10px;padding-bottom:20px;}
+
+/************************admIN**********/
+/*****************surgview***********************************/
+.surgeview
+{padding-top:10px;
+}
+.surgviewtab
+{
+margin-top:10px;padding-left:250px;height:50px;border-bottom:1px solid #e1e1e1;
+}
+.slaa
+{float:left;padding-left:10px;margin-top:-2px;
+}
+
+.surgdetailtitle
+{height:30px;padding:15px;
+}
+.sheadv
+{font-size:17px;font-weight:lighter;margin-left:60px;
+color:#838383;}
+.surgdetail-table
+{width:850px;border-spacing:0px;border-collapse:collapse;font-size:12px;
+
+}
+.surgdetail-table td
+{width:350px;border:1px solid #d1d1d1;
+border-left:0px;
+padding-left:10px;height:30px;
+
+}
+.surgdetail div
+{margin-left:235px;
+}
+
+
+#sdt1{width:50px;border-left:1px solid #d1d1d1;}
+#sdt2{width:100px;}
+#sdt5{width:100px;}
+/*************************************************************/
+
+
+.lastuser{width:1170px;}
+.lastuser td
+{width:250px;}
+
+.edituser{width:950px;}
+.edituser td
+{width:250px;}
+#sd4
+{width:100px;padding-left:40px;}
+#sd3
+{width:300px;
+}
+.editfield
+{
+
+margin-left:250px;
+margin-top:50px;
+
+}
+.editfielddiv td
+{height:50px;
+
+}
+.edit-log
+{float:left;margin-left:300px;}
+.adminset
+{margin-left:170px;margin-top:10px;}
+/*********************/
+
+
+
+
+
+/***************admIN************/
+
+
+.recact
+{color:#B1B6B1;
+font-size:17px;
+font-family:ubuntu;margin-top:10px;margin-left:200px;padding-bottom:30px;
+
+
+}
+#rec1
+{color:#B1B6B1;margin-top:5px;padding-left:200px;font-size:12px;}
+}
+.edit
+{margin-left:300px;padding-top:30px;}
+.create
+{margin-left:300px;padding-top:30px;}
+
+.admbt
+{margin-right:20px;float:right;
+background-color:#89c403;
+	color:#ffffff;
+	 font-family: ubuntu,arial;
+	font-size:15px;border:0px;
+	font-weight:200;
+	padding:2px 7px;}
+	.admbt2{background-color:#e1e1e1;color:black;}
+.admbt:hover
+{cursor:pointer;
+background-color:red;}
+.admbt2:hover
+{cursor:pointer;
+background-color:#dc572e;}
+
+.edit-log
+{float:left;margin-left:500px;}
+
+
+
+.editll
+{margin-left:300px;
+margin-top:50px;
+}
+.border
+{border:1px solid #e1e1e1;}
+.notif{min-width:1200px;min-height:400px;margin-top:-20px;}
+.notif1{float:left;width:600px;border-right:5px solid #e1e1e1;min-height:400px;}
+.notif2{float:left;width:400px;min-height:400px;}
+
+.recact2
+{color:#B1B6B1;
+font-size:15px;
+font-family:ubuntu;margin-top:10px;margin-left:20px;padding-bottom:30px;
+
+}
+#head34
+{font-weight:800;
+}
+#notifhead
+{height:50px;
+}
+#notcid
+{width:50px;text-align:center;}
+
+.collapse
+{width:1348px;
+}
+.addlb
+{
+font-size:12px;
+}

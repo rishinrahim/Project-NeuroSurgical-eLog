@@ -1,0 +1,217 @@
+$def with (alert,result)
+<!DOCTYPE html>
+<html>
+	<title>Admin Edit Log </title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/dashboard1.css" type="text/css" rel="stylesheet" />		
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="/static/styles/jquery-ui.css" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS |">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		<script type="text/javascript" >
+		function ConfirmDelete()
+			{
+				var x = confirm("Are you sure you want to delete?");
+				if (x)
+					return true;
+				else
+					return false;
+			}
+</script>
+<script type="text/javascript" >
+		
+jQuery(document).ready(function()
+{		
+	if($alert==1)
+			{
+			document.getElementById("wrongs").innerHTML = "Invalid Case ID.Try again";
+				
+			}
+		}
+);
+</script>
+
+
+		
+		  
+		
+
+		
+	
+	
+	
+
+
+		</head>
+	
+	
+	<body >
+		<div class="wrapper">	
+			
+			<div class="pagetitle" >
+				
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical </span><span class="green"> eLog </span></div>
+				<span id="date">
+				</span>
+				
+			</div>		
+			
+			<div class="profiletab">
+					<div class="profile-name ">Administrator</div>	
+					
+					<div class="nav">
+					<ul>
+					<li ><a href="/">Dashboard</a></li>
+					<li id="bnone"><a href="/adminsettings">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+			</div>	
+			
+			
+	<div class="adminbody">
+										<div class="dashboard">
+				
+			<ul class="dashboard_shortcut">
+					<li><a class="shortcutalt" href="/admincreateuser"><span>
+						<img class="shortcut-icon" src="/static/image/add.png" alt="icon"><br>
+						Create New user
+					</span></a></li>
+					
+					<li><a class="shortcutalt" href="/adminedituser"><span>
+						<img class="shortcut-icon" src="/static/image/ed.png" alt="icon"><br>
+						 Edit/Delete user
+					</span></a></li>
+										
+					<li><a class="shortcutalt" href="/adminlog"><span>
+						<img class="shortcut-icon" src="/static/image/view.png" alt="icon"><br>
+						 View log
+					</span></a></li>
+					<li><a class="shortcutalt" href="/admineditlog"><span>
+						<img class="shortcut-icon" src="/static/image/edit1.png" alt="icon"><br>
+						 Delete Log
+					</span></a></li>
+					<li><a class="shortcutalt" href="/adminnotification"><span>
+						<img  class="shortcut-icon" src="/static/image/notif.png" height="30" width="30" alt="icon"><br>
+						Alert Notification
+					</span></a></li>
+					<li><a class="shortcutalt" href="/adminnotification2"><span>
+						<img  class="shortcut-icon" src="/static/image/notify.png" height="30" width="30" alt="icon"><br>
+						Delete Requests
+					</span></a></li>
+									
+					
+					</ul>
+				
+				</div>
+					
+				
+				<div class="dashboard shead ">
+						<div class="sheadp"><img  src="/static/image/edit1.png" height="22" width="22" style="padding-right:4px;" alt="icon">Delete Log</div>
+						
+					</div>	
+					
+					
+
+				
+				
+				
+				<form method="post">
+
+					<div class="pageheader phr">
+						<div class="viewlog"style="margin-left:10px;margin-top:3px;">
+						<div class="vlaa" style="padding-right:5px; ">
+						<input type="text" class="login-text-area" name="caseid" placeholder="Enter CaseID here"  required >
+						</div>
+						<input type="submit" class="adbtnalt" name="edit" value="View Contents"  />
+						</div>
+						</div>
+				</form>
+				
+				
+					
+				<table class="viewlogtable collapse" >
+					<tbody>
+					<tr id="tablehead" >
+					<td id="col_1">Case ID</td>
+					<td id="col_2">Date/Time</td>
+					<td id="col_3">Hospital ID</td>
+					<td id="col_4">Patient Name</td>
+					<td id="col_3">Age</td>
+					<td id="col_3">Sex</td>
+					<td id="col_8">Primary Surgeon</td>
+					<td id="col_9">Asst I</td>
+					<td id="col_10">Asst II</td>
+					<td id="col_17">Supervisor</td>
+					<td id="col_12">Location</td>
+					<td id="col_12">Diagnosis</td>
+					<td id="col_12">Operative</td>
+					<td id="col_12">Procedure</td>
+					<td id="col_17">Side</td>
+					<td id="col_17">Action</td>
+					
+
+					$for case in result:
+						<tr>
+						
+						<td >$case.caseid</td>
+						<td >$case.date $case.time</td>
+						<td >$case.hospid</td>
+						<td >$case.pname</td>
+						<td >$case.page</td>
+						<td >$case.psex</td>
+						<td >$case.psid</td>					
+						<td >$case.faid</td>					
+						<td >$case.said</td>					
+						<td >$case.spid</td>					
+						<td >$case.floc</td>					
+						<td >$case.fdiag</td>					
+						<td >$case.opid</td>					
+						<td >$case.fpro</td>					
+						<td >$case.sdid</td>
+						<td>
+						<form method="post" action="/admindellog">
+						<input type="hidden" name="caseid" value=$case.caseid>
+						<input type="submit" class="adbtn" name="edit" value="Delete" onclick="return ConfirmDelete();return false;"/> </td>
+						</form>
+						</tr>
+						
+					
+					
+					
+					
+					
+					</tbody>
+				</table>
+				<div id="wrongs"></div>
+		</div>
+			
+				
+		
+			
+			
+			
+			
+		
+				
+		
+		
+			
+		
+
+		
+	
+	</body>
+</html>

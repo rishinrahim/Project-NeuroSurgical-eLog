@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Admin </title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/dashboard1.css" type="text/css" rel="stylesheet" />		
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS |">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		 
+		
+		
+		
+		
+		
+	</head>
+	
+	
+	<body >
+		<div class="wrapper">	
+			
+			<div class="pagetitle " >
+				
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical </span><span class="green"> eLog </span></div>
+				<span id="date"></span>
+			</div>		
+				
+			<div class="profiletab">
+					<div class="profile-name ">Administrator</div>	
+					
+					<div class="nav">
+					<ul>
+					<li ><a href="/admin">Dashboard</a></li>
+					<li id="bnone"><a href="/adminsettings">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+				</div>	
+			
+		
+				
+			
+			<div class="adminbody">
+					
+				<div class="dashboard">
+				
+			<ul class="dashboard_shortcut">
+					<li><a class="shortcutalt" href="/admincreateuser"><span>
+						<img class="shortcut-icon" src="/static/image/add.png" alt="icon"><br>
+						Create New user
+					</span></a></li>
+					
+					<li><a class="shortcutalt" href="/adminedituser"><span>
+						<img class="shortcut-icon" src="/static/image/ed.png" alt="icon"><br>
+						 Edit/Delete user
+					</span></a></li>
+										
+					<li><a class="shortcutalt" href="/adminlog"><span>
+						<img class="shortcut-icon" src="/static/image/view.png" alt="icon"><br>
+						 View log
+					</span></a></li>
+					<li><a class="shortcutalt" href="/admineditlog"><span>
+						<img class="shortcut-icon" src="/static/image/edit1.png" alt="icon"><br>
+						 Delete Log
+					</span></a></li>
+					<li><a class="shortcutalt" href="/adminnotification"><span>
+						<img  class="shortcut-icon" src="/static/image/notif.png" height="30" width="30" alt="icon"><br>
+						Alert Notification
+					</span></a></li>
+					<li><a class="shortcutalt" href="/adminnotification2"><span>
+						<img  class="shortcut-icon" src="/static/image/notify.png" height="30" width="30" alt="icon"><br>
+						Delete Requests
+					</span></a></li>
+									
+					
+					</ul>
+				
+				</div>
+				<div class="dashboard-details">
+				<p style="padding:10px;margin-left:200px;">You have successfully deleted a Case. <a href="/admineditlog " style="color:blue">Go Back</a><p>
+				 
+				</div>
+		
+		
+		
+		
+		
+	</div>
+		
+	
+	</body>
+</html>

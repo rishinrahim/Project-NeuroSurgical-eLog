@@ -1,0 +1,356 @@
+$def with (result1,result2)
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>editlogtest</title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/dashboard.css" type="text/css" rel="stylesheet" />		
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="/static/styles/jquery-ui.css" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS |">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		  <script>
+  jQuery(document).ready(function() {
+    var result=jQuery( ".adminbody" ).height();
+	
+	jQuery(".adm").height(result);
+	
+  });
+  </script>
+<script type="text/javascript" >
+		
+jQuery(document).ready(function()
+{
+  jQuery("#primaryd").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	alert(pid);
+	if(pid !='Surgeon')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getsec",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{
+			
+			$$("#secd").empty();
+			$$.each(regions,function(index,region){$$("#secd").append("<option value="+region+">" + region + "</option>");});
+			}
+			
+	  });
+     }
+    else
+     {$$("#secd").empty();
+      jQuery("#secd").append("<option value='0'>-----</option>");
+     }
+    return false;
+  });
+ 
+})
+</script>
+
+		
+	
+	
+	
+
+
+		</head>
+	
+	
+	<body >
+		<div class="wrapper">	
+			
+			<div class="pagetitle" >
+				
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical </span><span class="green"> eLog </span></div>
+				<span id="date">
+				</span>
+				
+			</div>		
+			
+			<div class="profiletab">
+					<div class="profile-name ">Administrator</div>	
+					
+					<div class="nav">
+					<ul>
+					<li ><a href="/">Dashboard</a></li>
+					<li id="bnone"><a href="/adminsettings">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+			</div>	
+			
+			
+			<div class="adminbody">
+				<div class="adm">
+					<table class="stattable">
+					<tbody>				
+					<tr><td></td></tr>
+					<tr><td><a href="/admincreateuser">Create New user</a></td></tr>
+					<tr><td><a href="/adminedituser">Edit/delete user</a></td></tr>
+					<tr><td></td></tr>
+					<tr><td><a href="/adminlog">View Log</a></td></tr>
+					<tr><td><a href="/adminnotifyusr">Notify User</a></td></tr>
+					<tr><td></td></tr><tr><td><a href="/adminnotification">Notification</a></td></tr><tr><td></td></tr>
+					<tr><td><a href="/addsurgicaldetail">Add New Surgical Detail</a></td></tr>
+					<tr><td><a href="/adminviewsurgicaldetail">Edit/Delete Surgical Detail</a></td></tr>
+					</tbody></table>
+				</div>
+					
+				
+				<div class="adminviewlog">
+					<div class="dashboard shead ">
+						<div class="sheadp"><img  src="/static/image/ed.png" height="22" width="22" style="padding-right:4px;" alt="icon">Edit/Delete Log</div>
+					</div>	
+					
+					
+
+				
+				
+				
+				<form method="post">
+				<div class="pageheader phr">
+					<div class="viewlog">
+						
+							<div class="styled-select" style="margin-left:10px">
+								<select name="option1" id="primaryd">
+								<option value="0">Surgeon</option>
+								$for user in result1:							 
+									<option>$user.name</option>
+								</select>
+							</div>
+						
+							<div class="vlaa" style="margin-left:10px">
+								<span class="styled-select arrow select2">
+								<select name="option2" id="secd">
+								<option value="0">---</option>
+								</select>
+							</div>
+						
+							
+							
+							<input type="submit" class="adbtnalt" name="edit" value="View Contents" />
+							
+							</div>
+						
+					</div>
+					<div class="pageheader phr">
+						<div class="viewlog">
+						<div class="vlaa" style="margin-left:10px">
+						<input type="text" class="login-text-area" name="delcase" placeholder="Enter CaseID here">
+						
+						</div>
+						<input type="submit" class="adbtn" name="edit" value="Delete Case" onclick="confirm('Are You Sure You want to Delete');"/>
+						</div>
+						</div>
+				</form>
+				
+				
+					
+				<div class="admvldiv2">
+							
+					<table class="admineditlogtable">
+							<tbody>
+						
+								$for case in result2:
+										
+										
+										<tr><td id="col_2">Case ID</td><td ><span style="font-size:16px;font-weight:800;">$case.caseid</font></td><td> </td></tr>
+										
+										<form action="/editdate" method="post">
+										<tr>
+										<td id="col_2">Date/time</td><td >$case.date $case.time</td>
+										<td > <input type="text" class="small-text-area"  id="datepicker" name="date"><input type="text" class="small-text-area"  id="altdatepicker" name="time" style="cursor:pointer;">
+										<input type="Submit" class="adbtnalt " name="change" value="Change" /></td>
+										</form>
+										</tr>
+										
+										
+										<tr>
+										<form action="/edithid" method="post">
+										<td id="col_2">HospitalID</td><td >$case.hospid</td><td><input type="text" class="login-text-area"  name="hospid"><input type="Submit" class="adbtnalt " name="change" value="Change" /></td></tr>
+										</form>
+										
+										<tr>
+										<form action="/editpname" method="post">
+										<td id="col_2">Patient </td><td>$case.pname</td><td><input type="text" class="login-text-area" name="pname"><input type="Submit" class="adbtnalt " name="change" value="Change" /></td>
+										</form>
+										</tr>
+										
+										
+										<tr>
+										<form action="/editpage" method="post">
+										<td id="col_2">age</td><td >$case.page</td><td><input type="text" class="login-text-area"   name="page">
+										<input type="Submit" name="change" class="adbtnalt " name="change" value="Edit age" /></td>
+										</form>
+										</tr>
+										
+										<tr>
+										<form action="/editpsex" method="post">
+										<td id="col_2">Gender</td><td >$case.psex</td><td><input type="text" class="login-text-area"   name="page">
+										<input type="Submit" name="change" class="adbtnalt " name="change" value="Edit age" /></td>
+										</form>
+										</tr>
+											
+										<tr>
+										<form action="/editps" method="post">
+										<td id="col_2">Primary Surgeon</td><td >$case.psid</td>
+										<td ><span class="styled-select arrow select2">
+										<select>					
+										<option>-----</option></select></span>
+										<input type="Submit" class="adbtnalt " name="change" value="Change" /></td></tr>
+										</form>
+										
+										<tr>
+										<form action="/editfa" method="post">
+										<td id="col_2">First Asst</td><td>$case.faid</td><td ><span class="styled-select arrow select2">
+										<select>					
+										<option>-----</option></select></span><input type="Submit" class="adbtnalt " name="change" value="Change" /></td></tr>
+										</form>
+										<tr>
+										
+										<form action="/editsa" method="post">
+										<td id="col_2">Second Asst</td><td>$case.said</td><td >
+													<span class="styled-select arrow select2">
+													<select>					
+														<option>-----</option></select></span><input type="Submit" name="change" class="adbtnalt " value="Change" />
+														
+														</td>
+										</form>
+										</tr>
+										
+										<tr>
+										<form action="/editsp" method="post"><td id="col_2">Superviser</td>
+											<td >$case.spid</td>
+											<td ><span class="styled-select arrow select2">
+													<select>					
+														<option>-----</option>
+													</select>
+												</span><input type="Submit" class="adbtnalt " name="change" value="Change" /></td>
+										</form>
+										</tr>
+										
+										<tr>
+										<form action="/editdiag" method="post">
+										<td id="col_2"> Diagnosis</td>
+											<td >$case.fdiag</td>
+											<td ><span class="styled-select ">
+													<select>					
+														<option>-----</option>
+													</select></span>
+												<span class="styled-select ">
+													<select>					
+														<option>-----</option>
+													</select>
+												</span>
+												<span class="styled-select ">
+													<select>					
+														<option>-----</option>
+													</select></span>
+												<span class="styled-select ">
+													<select>					
+														<option>-----</option>
+													</select>
+												</span>
+												
+												<input type="Submit" class="adbtnalt " value="Change" name="change"/>
+											</td>
+										</form>
+										</tr>
+								
+								
+								
+										<tr>
+										<form action="/editloc" method="post"><td id="col_1">Location</td>
+											<td >$case.floc</td>
+											<td ><span class="styled-select ">
+													<select>					
+														<option>-----</option>
+													</select>
+												</span>
+												<span class="styled-select ">
+													<select>					
+														<option>-----</option>
+													</select></span>
+												<span class="styled-select ">
+													<select>					
+													<option>-----</option>
+													</select></span>
+												<span class="styled-select ">
+													<select>					
+													<option>-----</option></select></span>
+													<input type="Submit" class="adbtnalt " value="Change" name="change"/></td>
+										</form>
+										</tr>
+										
+										<tr>
+										<form action="/editop" method="post"><td id="col_1">operative</td>
+											<td>$case.opid</td>
+											<td><span class="styled-select arrow select2">
+													<select>					
+														<option>-----</option></select></span>
+												<input type="Submit" class="adbtnalt " value="Change" name="change"/></td></tr>
+										</form>
+										<tr>
+										<form action="/editpro" method="post"><td id="col_1">Procedure</td>
+											<td>$case.fpro</td>
+											<td><span class="styled-select ">
+													<select>					
+														<option>-----</option></select></span>
+												<span class="styled-select ">
+													<select>					
+														<option>-----</option></select></span>
+												<span class="styled-select ">
+													<select>					
+														<option>-----</option></select></span>
+												<span class="styled-select ">
+													<select>					
+														<option>-----</option></select></span>
+												<input type="Submit" class="adbtnalt " value="Change" name="change"/></td></tr>
+										</form>
+										<tr>
+										<form action="/editside" method="post">
+										<td id="col_1"> side</td>
+											<td >$case.sdid</td>
+											<td ><span class="styled-select arrow select2">
+													<select>					
+														<option>-----</option></select></span>
+												<input type="Submit" class="adbtnalt " value="Change" name="change"/></td>
+										</form>		
+										</tr>
+							
+								
+							</tbody>
+					</table>
+				</div>
+						
+									
+				
+				</div>
+		</div>
+	</div>	
+		
+		
+	
+		
+	
+	</body>
+</html>

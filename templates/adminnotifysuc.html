@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Administrator</title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/dashboard.css" type="text/css" rel="stylesheet" />		
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS |">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		<script>
+		  $$(function() {
+			var result=$$( ".adminbody" ).height();
+			
+			$$(".adm").height(result);
+			
+		  });
+		</script>
+		
+		
+		
+		
+		
+	</head>
+	
+	
+	<body >
+		<div class="wrapper">	
+			
+			<div class="pagetitle " >
+				
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical </span><span class="green"> eLog </span></div>
+				<span id="date"></span>
+			</div>		
+				
+			<div class="profiletab">
+					<div class="profile-name ">Administrator</div>	
+					
+					<div class="nav">
+					<ul>
+					<li ><a href="/admin">Dashboard</a></li>
+					<li id="bnone"><a href="/adminsettings">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+				</div>	
+			
+		
+				
+			
+			<div class="adminbody">
+					
+				<div class="adm">
+					<table class="stattable">
+					<tbody>				
+					<tr><td></td></tr>
+					<tr><td><a href="/admincreateuser">Create New user</a></td></tr>
+					<tr><td><a href="/adminedituser">Edit/delete user</a></td></tr>
+					<tr><td></td></tr>
+					<tr><td><a href="/adminlog">View Log</a></td></tr>
+					<tr><td><a href="/admineditlog">Edit/Delete Log</a></td></tr>
+					<tr><td><a href="/adminnotifyusr">Notify User</a></td></tr>
+					<tr><td></td></tr><tr><td><a href="/adminnotification">Notification</a></td></tr><tr><td></td></tr>
+					<tr><td><a href="/addsurgicaldetail">Add New Surgical Detail</a></td></tr>
+					<tr><td><a href="/adminviewsurgicaldetail">Edit/Delete Surgical Detail</a></td></tr>
+					</tbody></table>
+				</div>
+				
+				<div class="dashboard-details">
+				<p style="padding:10px;margin-left:200px;">You have successfully Notified the surgeon.<a href='/adminnotifyusr' style="color:RED">Go back</a></p>
+				</div>
+		
+		
+		
+		
+		
+	</div>
+		
+	
+	</body>
+</html>

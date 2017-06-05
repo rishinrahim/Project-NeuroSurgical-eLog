@@ -1,0 +1,189 @@
+$def with (alert)
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Account Settings </title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/popup.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="/static/styles/jquery-ui.css" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		
+		
+	<script type="text/javascript">
+	function validateForm()
+{	var password = $$("#password").val();
+    var cpwd = $$("#cpwd").val();
+	if (password != cpwd) { 
+		document.getElementById("wrongs").innerHTML = "Passwords do not match!";
+		return false; }
+	
+}
+	</script >	
+	<script type="text/javascript">
+	function checkPasswordMatch() {
+	    var password = $$("#password").val();
+		var confirmPassword = $$("#cpwd").val();
+	    if (password != confirmPassword)
+			$$("#divCheckPasswordMatch").html("Passwords do not match!");
+    else
+        $$("#divCheckPasswordMatch").html("Passwords match.");
+}
+
+$$(document).ready(function () {
+   $$("#cpwd").keyup(checkPasswordMatch);
+});
+	
+	</script>
+	<script type="text/javascript" >
+		
+$$(document).ready(function()
+{
+		if($alert==1)
+			{
+				// When site loaded, load the Popupbox First
+				loadPopupBox();
+		
+				$$('#popupBoxClose').click( function() {            
+				unloadPopupBox();
+				});
+        
+				$$('#container').click( function() {
+				unloadPopupBox();
+				});
+		
+				function unloadPopupBox() {    // TO Unload the Popupbox
+				$$('#popup_box').fadeOut("slow");
+				$$("#container").css({ // this is just for style        
+					"opacity": "1"  
+				}); 
+			 }    
+        
+				function loadPopupBox() {    // To Load the Popupbox
+				$$('#popup_box').fadeIn("slow");
+				$$("#container").css({ // this is just for style
+				"opacity": "0.3"  
+				});         
+				}        
+				
+			}
+			else if($alert==2)
+			{
+			document.getElementById("wrongs").innerHTML = "You do not have the permission to make this change.Try again";
+				
+			}
+		}
+);
+</script>	
+		</head>
+	
+	
+	<body >
+		<div id="popup_box">
+		<div class="pagetitle" >
+				
+				<div class="imagelogo"><img src="static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue">Neurosurgical </span><span class="green"> eLog </span></div>
+				
+				
+			</div>			
+				
+				
+				<div id="poptext">
+				<!-- OUR PopupBox DIV--> 
+			You have updated Your password !!!
+				</div>										
+				
+			
+			<a id="popupBoxClose">Close</a> 
+		</div>
+		<div class="wrapper">	
+			
+			<div class="pagetitle " >
+				
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical </span><span class="green"> eLog </span></div>
+				<span id="date"></span>
+			</div>		
+				
+			<div class="profiletab">
+					<div class="profile-name ">Head Nurse</div>	
+					
+					<div class="nav">
+					<ul>
+					<li><a href="/headnurse">Dashboard</a></li>
+					
+					
+					<li  class="active" id="bnone"><a href="/headsetting">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+				</div>	
+			
+			
+				
+				<div class="pageheader">
+			<p style="margin-left:60px;margin-Top:7px; "><img  src="/static/image/settings.png" height="22" width="22" style="padding-right:4px;" alt="icon">Account Settings</p>
+	
+	
+			</div>
+				
+				
+				<div class="mainbody">
+
+			<div class="acct">
+				<form method="post" onsubmit="return validateForm();return false;" >
+								
+				
+				<div class="pwd">
+				<div id="wrongs"></div>
+				<table class="add-log-table1">
+					<tbody>
+					<tr><td><b>Change Password</b></td><td></td></tr>
+					<tr><td>Current Password</td><td><input type="password" class="login-text-area" name="cpassword" id="cpassword"  required></td></tr>
+					<tr><td>New Password</td><td><input type="password" class="login-text-area" name="password" id="password" required></td></tr>
+					<tr><td>Confirm Password</td><td><input type="password" class="login-text-area" name="cpwd" id="cpwd"onChange="checkPasswordMatch()"  required>
+					<br/><div id="divCheckPasswordMatch"></div></td></tr>
+					</tbody>
+				</table>
+				
+				</div>
+				<div class="button">
+				<input type="submit" value="Save Changes" class="btn blue" name="update"/><input type="reset" value="Cancel" class="btn blue" />
+				</form>
+				</div>
+				</div>
+		
+		
+		
+		
+			
+		
+		
+	</div>
+
+			
+		
+		
+		
+		
+		
+		
+	</div>
+		
+	
+	</body>
+</html>

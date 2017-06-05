@@ -1,0 +1,183 @@
+$def with (value,name,result)
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dashboard</title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/popup.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/dashboard1.css" type="text/css" rel="stylesheet" />		
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS | ">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		<style type="text/css" media="print">
+			@page { size: landscape; }
+		</style>
+		<style> @media only print
+{
+    .pagetitle,.profiletab,.dashboard-details,.pageheader{ display:none; }
+	
+}  </style>
+<script type="text/javascript">
+var tableToExcel = (function() {
+  var uri = 'data:application/vnd.ms-excel;base64,'
+    , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+    , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+    , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+  return function(table, name) {
+    if (!table.nodeType) table = document.getElementById(table)
+    var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+    window.location.href = uri + base64(format(template, ctx))
+  }
+})()
+</script>
+		<script type="text/javascript">
+    
+				$$(document).ready( function() {
+				if($value!=0)
+				// When site loaded, load the Popupbox First
+				{loadPopupBox();
+		
+				$$('#popupBoxClose').click( function() {            
+				unloadPopupBox();
+				});
+        
+				$$('#container').click( function() {
+				unloadPopupBox();
+				});
+		
+				function unloadPopupBox() {    // TO Unload the Popupbox
+				$$('#popup_box').fadeOut("slow");
+				$$("#container").css({ // this is just for style        
+					"opacity": "1"  
+				}); 
+			}    
+        
+				function loadPopupBox() {    // To Load the Popupbox
+				$$('#popup_box').fadeIn("slow");
+				$$("#container").css({ // this is just for style
+				"opacity": "0.3"  
+				});         
+				}        
+				}
+				});
+			</script> 
+
+
+	</head>
+	
+	
+	<body  >
+		<div id="popup_box">
+			<div class="pagetitle" >
+				<div class="imagelogo"><img src="static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue">- </span><span class="green"> eLog </span></div>
+			</div>			
+			<div id="poptext">
+						You have $value New Alerts
+			</div>										
+			<a id="popupBoxClose">Close</a> 
+		</div>
+		
+		<div class="wrapper">	
+			
+			<div class="pagetitle" >
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical <span class="green"> eLog </div>
+				<span id="date"></span>
+			</div>			
+				
+				
+			<div class="profiletab">
+				<div class="profile-name"><a href="/surgeon">Dr. $name</a></div>
+				<div class="nav">
+					<ul>
+						<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+				</div>
+			</div>	
+		
+			
+		<div class="adminbody">
+		
+				
+							
+			
+			<div class="dashboard-details">
+			<div class="dashboard">
+				<ul class="dashboard_shortcut">
+				<li><a class="shortcut" href="/surgeonaddlog"><img class="shortcut-icon" src="/static/image/edit.png" alt="icon"><span>	Add Log	</span></a></li>
+				<li><a class="shortcut" href="/surgeonviewlog"><img class="shortcut-icon" src="/static/image/view.png" alt="icon"><span> Personal log</a></span></li>
+				<li><a class="shortcut" href="/surgeoneditlog"><img class="shortcut-icon" src="/static/image/edit1.png" alt="icon"><span> Edit Log</a></span></li>
+				<li><a class="shortcut" href="/surgeonnotification"><img  class="shortcut-icon" src="/static/image/notif.png" height="30" width="30" alt="icon"><span>Alerts</a></span></li>
+				<li><a class="shortcut" href="/surgeonsetting"><img class="shortcut-icon" src="/static/image/tools.png" alt="icon"><span>Settings</a></span></li>
+				
+				</ul>
+			</div>
+			<div class="pageheader">
+			
+				<ul class="xxyy ">
+			
+					<li><input type="button" value="Print" class="btn"  onClick="window.print()" /></li>
+					<li><input type="button" value="Export" onclick="tableToExcel('viewlogtable')" class="btn" /></li>
+				
+				</ul>
+				
+				
+				
+				
+				<div class="viewlog">
+					<form method="post">
+						<input type="text" class="login-text-area lta"name="search" required/>
+						
+						<input type="submit" class="adbtnalt" value="Search" />
+					</form>
+					
+				</div>	
+				</div>
+			</div>
+			<div class="log-table-body">
+			<table class="viewlogtable collapse" id="viewlogtable">
+			<tbody>
+			<tr id="tablehead" >
+			<td id="col_1">Case ID</td>
+			<td id="col_2">Date</td>
+			<td id="col_2">Time</td>
+			<td id="col_3">Hospital ID</td>
+			<td id="col_4">Patient Name</td>
+			<td id="col_3">Age</td>
+			<td id="col_3">G</td>
+			<td id="col_8">Primary Surgeon</td>
+			<td id="col_9">Asst I</td>
+			<td id="col_10">Asst II</td>
+			<td id="col_17">Suprvisr</td>
+			<td id="col_11">Anst.</td>
+			<td id="col_11">scrub</td>
+			<td id="col_12">Location</td>
+			<td id="col_12">Diagnosis</td>
+			<td id="col_12">Operative</td>
+			<td id="col_12">Procedure</td>
+			<td id="col_17">Side</td>
+			
+			$for case in result:
+						<tr><td >$case.caseid</td><td >$case.date</td><td> $case.time</td><td >$case.hospid</td><td >$case.pname</td><td >$case.page</td>
+						<td >$case.psex</td><td >$case.psid</td><td >$case.faid</td><td >$case.said</td><td >$case.spid</td><td >$case.anst</td><td >$case.scrub</td>					
+						<td >$case.floc</td><td >$case.fdiag</td><td >$case.opid</td><td >$case.fpro</td><td >$case.sdid</td></tr>	
+					
+			</tbody>
+			</table>				
+			</div>	
+		
+		</div>
+	</div>
+	</body>
+</html>

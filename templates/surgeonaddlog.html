@@ -1,0 +1,496 @@
+$def with (result,result1,result2,result3,result4,result5,surgeon1,surgeon2,surgeon3,surgeon4)
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Add log </title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/dashboard1.css" type="text/css" rel="stylesheet" />	
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="/static/styles/jquery-ui.css" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS |">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+	
+		<script type="text/javascript" >
+		
+jQuery(document).ready(function()
+{
+  jQuery("#primaryd").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid!='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getsec",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success:function(regions)
+			{
+			$$("#terd").empty();
+			$$("#secd").empty();
+			$$("#quad").empty();
+			$$.each(regions,function(index,region){$$("#secd").append("<option selected='selected' >" + region + "</option>");});
+			$$("#terd").append("<option selected='selected'>None</option>");
+			$$("#quad").append("<option selected='selected'>None</option>");
+			}
+			
+	  });
+     }
+    else
+     {
+      jQuery("#secd").html("Failed");
+     }
+    return false;
+  });
+  
+  /**/
+   jQuery("#secd").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid !='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getsec",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#terd").empty();$$("#quad").empty();
+			$$.each(regions,function(index,region){$$("#terd").append("<option selected='selected'>" + region + "</option>");});
+			$$("#quad").append("<option selected='selected'>None</option>");
+			
+			}
+			
+	  });
+     }
+    
+    return false;
+  }); 
+   jQuery("#terd").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid != ' ')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getsec",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#quad").empty();
+			$$.each(regions,function(index,region){$$("#quad").append("<option selected='selected'>" + region + "</option>");});
+			}
+			
+	  });
+     }
+    
+    return false;
+  });
+})
+</script>
+<!--Location-->
+<script type="text/javascript" >
+		
+jQuery(document).ready(function()
+{
+  jQuery("#primaryl").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid!='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getloc",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success:function(regions)
+			{
+			$$("#terl").empty();
+			$$("#secl").empty();
+			$$("#qual").empty();
+			
+			$$.each(regions,function(index,region){$$("#secl").append("<option selected='selected'>" + region + "</option>");});
+			$$("#terl").append("<option selected='selected'>None</option>");
+			$$("#qual").append("<option selected='selected'>None</option>");
+			}
+			
+	  });
+     }
+    else
+     {
+      jQuery("#secl").html("Failed");
+     }
+    return false;
+  });
+  
+  /**/
+   jQuery("#secl").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid !='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getloc",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#terl").empty();$$("#qual").empty();
+			
+			$$.each(regions,function(index,region){$$("#terl").append("<option selected='selected'>" + region + "</option>");});
+			$$("#qual").append("<option selected='selected'>None</option>");
+			}
+			
+	  });
+     }
+    
+    return false;
+  }); 
+   jQuery("#terl").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid != ' ')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getloc",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#qual").empty();
+			$$.each(regions,function(index,region){$$("#qual").append("<option selected='selected'>" + region + "</option>");});
+			}
+			
+	  });
+	  
+     }
+    
+    return false;
+  });
+})
+</script>
+<!--Procedure-->
+<script type="text/javascript" >
+		
+jQuery(document).ready(function()
+{
+  jQuery("#primaryp").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid!='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getpro",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success:function(regions)
+			{
+			$$("#terp").empty();
+			$$("#secp").empty();
+			$$("#quap").empty();
+			$$.each(regions,function(index,region){$$("#secp").append("<option selected='selected'>" + region + "</option>");});
+			$$("#terp").append("<option selected='selected'>None</option>");
+			$$("#quap").append("<option selected='selected'>None</option>");
+			}
+			
+	  });
+     }
+    else
+     {
+      jQuery("#secp").html("Failed");
+     }
+    return false;
+  });
+  
+  /**/
+   jQuery("#secp").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid !='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getpro",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#terp").empty();$$("#quap").empty();
+			$$.each(regions,function(index,region){$$("#terp").append("<option selected='selected'>" + region + "</option>");});
+			$$("#quap").append("<option selected='selected'>None</option>");
+			}
+			
+	  });
+     }
+    
+    return false;
+  }); 
+   jQuery("#terp").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid != ' ')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getpro",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#quap").empty();
+			$$.each(regions,function(index,region){$$("#quap").append("<option selected='selected'>" + region + "</option>");});
+			}
+			
+	  });
+     }
+    
+    return false;
+  });
+})
+</script>
+<script>
+function ConfirmDelete()
+{ 	var age = $$("#page").val();
+	if (age !== "" && !$$.isNumeric(age)) {
+	alert("Type valid number as AGE"); //Show error
+	$$("#page").focus(); //Focus on field
+	return false;}
+else{
+	return true;}
+	
+}
+
+
+
+</script>		
+		</head>
+	
+	
+	<body >
+		<div class="wrapper">	
+			
+			<div class="pagetitle" >
+				
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical </span><span class="green"> eLog </span></div>
+				<span id="date">
+				</span>
+				
+			</div>		
+				
+			<div class="profiletab">
+				$for user in result:
+					<div class="profile-name">Dr. <a href="/surgeon">$user.name</a></div>	
+					
+					<div class="nav">
+					<ul>
+					
+					<li><a href="/surgeonaddlog">Add Log</a></li>
+					<li><a href="/surgeonviewlog">View Log</a></li>
+					<li ><a href="/surgeoneditlog">Edit log</a></li>
+					<li ><a href="/surgeonnotification">Alerts</a></li>
+					<li ><a href="/surgeonsetting">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+				</div>	
+			
+			
+				
+		
+				
+				<div class="mainbody mbody2">
+					<div >
+						
+					<form method="POST" name="addlog" onsubmit="return validateForm()">
+						<table class="add-log-table1">
+							<tbody>
+							
+							<tr >
+								<td>Date of operation</td><td><input type="text" class="login-text-area"  id="datepicker" name="date" required>
+		<input type="text" class="small-text-area"  id="start" name="time"  placeholder="Time" required>
+	 </td>
+								<td><span class="righttd">Hospital ID</span></td>
+								<td><input class="login-text-area" type="text" name="hospid" required></td>
+							</tr>
+							</tbody>
+						</table>					
+							<table class="add-log-table1">
+							<tbody>
+							<tr>
+								<td>Patient Name</td>
+								<td><input class="login-text-area" type="text" name="pname" required></td>
+								<td><div class="righttd"><select  name="pgender"><option value="M" >Male</option><option  value="F"  >Female</option></select></div></td><td>
+								Age &nbsp;<input class="small-text-area" type="text" name="page" id="page" required></td>
+								
+							</tr>
+							
+							</tbody>
+						</table>
+				
+				
+				
+						<table class="add-log-table2">
+							<tbody>
+							<tr><td >Supervision</td>
+								<td><select name="psid" required>
+										<option value="">Principal surgeon</option>
+											
+										$for surg1 in surgeon1:
+												<option>$surg1.name</option>
+										</select>
+										</td>
+								<td><select name="faid" required>
+										<option value="">First Assistant</option>
+										<option>None</option>
+										$for surg2 in surgeon2:
+												<option>$surg2.name</option>
+										</select></td>
+								<td><select name="said" required>
+										<option value="">Second Assistant</option>
+										<option>None</option>
+										$for surg3 in surgeon3:
+												<option>$surg3.name</option>
+										</select>
+								</td>
+							</tr>
+							
+							<tr>
+							<td>Supervisor (if any)</td>
+							<td><select name="spid">
+										<option>None</option>
+										$for surg4 in surgeon4:
+												<option>$surg4.name</option>
+										</select></td>
+							</tr><tr>
+							
+							<td>Anaesthetist</td>
+							<td><input class="login-text-area" type="text" name="anst" required></td></tr>
+							<tr><td >Scrub Nurse</td>
+							<td><input class="login-text-area" type="text" name="scrub" required></td>
+							</tr>
+							</tbody>
+						</table>
+						<table class="add-log-table2" id="location">
+								<tbody>
+							<tr>
+							<td >Location</td>
+							<td><select name="primaryl"  id="primaryl" multiple>
+							
+							$for l in result1:
+								<option>$l.lname</option>
+							</select>
+							</span></td>
+							<td><select name="secl" id="secl" multiple required><option value=""></option></select></td>
+							<td><select name="terl" id="terl"  multiple required><option value=""></option></select></td>
+							<td ><select name="qual" id="qual" multiple  required><option value=""></option></select></td>
+							</tr>
+							</tbody>
+						</table>
+
+						<table class="add-log-table2">
+							<tbody>
+							<tr>
+							<td >Diagnosis</td>
+							<td><select name="primaryd"  id="primaryd" multiple required>
+								
+							$for d in result2:
+								<option >$d.dname</option>
+							</select>
+							</span></td>
+							<td><select name="secd" id="secd" multiple required><option value=""></option></select></td>
+							<td><select name="terd" id="terd" multiple required><option value=""></option></select></td>
+							<td ><select  name="quad" id="quad" multiple required><option value=""></option></select></td>
+							</tr>
+							</tbody>
+						</table>
+						
+						<table class="add-log-table2">
+						<tbody>
+						<tr><td>operative</td>
+						<td><select name="opid">
+						$for op in result3:
+								<option >$op.opname</option>						
+						</select> </td>
+						<td ><div style="margin-left:150px;">Side</div></td>
+						<td><select name="sdid">
+						$for side in result4:
+								<option >$side.sname</option>
+						</select></td>
+						<td></td>
+						</tr>
+						</tbody>
+					</table>
+					
+						<table class="add-log-table2">
+								<tbody>
+							<tr>
+							<td >Procedure</td>
+							<td><select name="primaryp"  id="primaryp" multiple required>
+							$for p in result5:
+								<option>$p.pcname</option>
+							</select>
+							</td>
+							<td><select name="secp" id="secp" multiple required><option value="" ></option></select></td>
+							<td><select name="terp" id="terp" multiple required><option value=""></option></select></td>
+							<td ><select  name="quap" id="quap" multiple required><option value=""></option></select></td>
+							</tr>
+							
+							</tbody>
+						</table>
+						<table class="add-log-table">
+						<tr><td>Remarks(if any)</td><td><input type="text" class="lta" name="remark" required></td></tr>
+						</table>
+						<div class="addbutton">
+						<input type="Reset" class="adbtn adbtn2" value="Reset" /><input type="submit" class="reset adbtn " value="Submit"  onclick="return ConfirmDelete();return false;" />
+						</div>
+					</form>
+					
+				</div>
+			
+		</div>
+		
+		
+		
+		
+		
+	</div>
+		
+	
+	</body>
+</html>

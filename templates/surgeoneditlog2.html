@@ -1,0 +1,537 @@
+$def with (result,result1,loc,diag,proc,opr,side,name)
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Edit/Delete Log</title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="/static/styles/jquery-ui.css" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS | ">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		
+	
+
+		<script type="text/javascript" >
+		
+jQuery(document).ready(function()
+{
+  jQuery("#primaryd").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid!='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getsec",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success:function(regions)
+			{
+			$$("#terd").empty();
+			$$("#secd").empty();
+			$$("#quad").empty();
+			$$.each(regions,function(index,region){$$("#secd").append("<option selected='selected' >" + region + "</option>");});
+			$$("#terd").append("<option selected='selected'>None</option>");
+			$$("#quad").append("<option selected='selected'>None</option>");
+			}
+			
+	  });
+     }
+    else
+     {
+      jQuery("#secd").html("Failed");
+     }
+    return false;
+  });
+  
+  /**/
+   jQuery("#secd").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid !='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getsec",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#terd").empty();$$("#quad").empty();
+			$$.each(regions,function(index,region){$$("#terd").append("<option selected='selected'>" + region + "</option>");});
+			$$("#quad").append("<option selected='selected'>None</option>");
+			
+			}
+			
+	  });
+     }
+    
+    return false;
+  }); 
+   jQuery("#terd").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid != ' ')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getsec",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#quad").empty();
+			$$.each(regions,function(index,region){$$("#quad").append("<option selected='selected'>" + region + "</option>");});
+			}
+			
+	  });
+     }
+    
+    return false;
+  });
+})
+</script>
+<!--Location-->
+<script type="text/javascript" >
+		
+jQuery(document).ready(function()
+{
+  jQuery("#primaryl").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid!='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getloc",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success:function(regions)
+			{
+			$$("#terl").empty();
+			$$("#secl").empty();
+			$$("#qual").empty();
+			
+			$$.each(regions,function(index,region){$$("#secl").append("<option selected='selected'>" + region + "</option>");});
+			$$("#terl").append("<option selected='selected'>None</option>");
+			$$("#qual").append("<option selected='selected'>None</option>");
+			}
+			
+	  });
+     }
+    else
+     {
+      jQuery("#secl").html("Failed");
+     }
+    return false;
+  });
+  
+  /**/
+   jQuery("#secl").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid !='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getloc",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#terl").empty();$$("#qual").empty();
+			
+			$$.each(regions,function(index,region){$$("#terl").append("<option selected='selected'>" + region + "</option>");});
+			$$("#qual").append("<option selected='selected'>None</option>");
+			}
+			
+	  });
+     }
+    
+    return false;
+  }); 
+   jQuery("#terl").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid != ' ')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getloc",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#qual").empty();
+			$$.each(regions,function(index,region){$$("#qual").append("<option selected='selected'>" + region + "</option>");});
+			}
+			
+	  });
+	  
+     }
+    
+    return false;
+  });
+})
+</script>
+<!--Procedure-->
+<script type="text/javascript" >
+		
+jQuery(document).ready(function()
+{
+  jQuery("#primaryp").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid!='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getpro",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success:function(regions)
+			{
+			$$("#terp").empty();
+			$$("#secp").empty();
+			$$("#quap").empty();
+			$$.each(regions,function(index,region){$$("#secp").append("<option selected='selected'>" + region + "</option>");});
+			$$("#terp").append("<option selected='selected'>None</option>");
+			$$("#quap").append("<option selected='selected'>None</option>");
+			}
+			
+	  });
+     }
+    else
+     {
+      jQuery("#secp").html("Failed");
+     }
+    return false;
+  });
+  
+  /**/
+   jQuery("#secp").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid !='')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getpro",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#terp").empty();$$("#quap").empty();
+			$$.each(regions,function(index,region){$$("#terp").append("<option selected='selected'>" + region + "</option>");});
+			$$("#quap").append("<option selected='selected'>None</option>");
+			}
+			
+	  });
+     }
+    
+    return false;
+  }); 
+   jQuery("#terp").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid != ' ')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getpro",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{		
+			$$("#quap").empty();
+			$$.each(regions,function(index,region){$$("#quap").append("<option selected='selected'>" + region + "</option>");});
+			}
+			
+	  });
+     }
+    
+    return false;
+  });
+})
+</script>
+	</head>
+	<body >
+		<div class="wrapper">	
+			
+			<div class="pagetitle" >
+				
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical <span class="green"> eLog </div>
+				<span id="date">
+				
+				
+			</div>		
+				
+			<div class="profiletab">
+				
+					<div class="profile-name">Dr. <a href="/surgeon">$name</a></div>	
+					
+					<div class="nav">
+					<ul>
+					
+					<li ><a href="/surgeonaddlog">Add Log</a></li>
+					<li><a href="/surgeonviewlog">View Log</a></li>
+					<li ><a href="/surgeoneditlog">Edit log</a></li>
+					<li ><a href="/surgeonnotification">Alerts</a></li>
+					<li ><a href="/surgeonsetting">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+				</div>	
+				<div class="pageheader phr">
+				<br />
+				
+				
+				<div style="margin-left:200px;margin-top:10px;">
+				<form method="post">
+				<span style="float:left;padding:4px;">Select Case ID</span>
+				<span class="styled-select arrow select2">
+								<select name="caseid" id="caseid">
+								$for users in result1:
+									<option>$users.caseid</option>
+								</select>  </span>
+				
+				
+				<input type="submit" class="adbtnalt " name="edit" style="float:left;" value="View Log" />
+				</form>
+				
+				</div>
+				
+				</div>
+				
+				
+				
+				<table class="viewlogtable editlogt collapse" >
+					<tbody>
+					<tr id="tablehead" >
+					<td id="col_1">Case ID</td>
+					<td id="col_2">Date/Time</td>
+					<td id="col_3">Hospital ID</td>
+					<td id="col_4">Patient Name</td>
+					<td id="col_3">Age</td>
+					<td id="col_3">Sex</td>
+					<td id="col_8">Primary Surgeon</td>
+					<td id="col_9">Asst I</td>
+					<td id="col_10">Asst II</td>
+					<td id="col_17">Supervisor</td>
+					<td id="col_11">Anaesthetic</td>
+					<td id="col_11">scrubnurse</td>
+					<td id="col_12">Location</td>
+					<td id="col_12">Diagnosis</td>
+					<td id="col_12">Operative</td>
+					<td id="col_12">Procedure</td>
+					<td id="col_17">Side</td>
+					
+
+					$for case in result:
+						<tr>
+						<td >$case.caseid</td>
+						<td >$case.date $case.time</td>
+						<td >$case.hospid</td>
+						<td >$case.pname</td>
+						<td >$case.page</td>
+						<td >$case.psex</td>
+						<td >$case.psid</td>					
+						<td >$case.faid</td>					
+						<td >$case.said</td>					
+						<td >$case.spid</td>					
+						<td >$case.anst</td>					
+						<td >$case.scrub</td>					
+						<td >$case.floc</td>					
+						<td >$case.fdiag</td>					
+						<td >$case.opid</td>					
+						<td >$case.fpro</td>					
+						<td >$case.sdid</td>
+						
+						</tr>
+						
+					
+					
+					
+					
+					
+					</tbody>
+				</table>			
+				
+				<div class="mainbody mbody2">
+				
+				<div class="useredit">
+				<form action="/editreq" method="post">
+				<table class="uedit">
+				<tbody>								
+									
+					<tr><td>Edit field Type</td><td>
+					
+					<select name="editfield" id="editfield">
+						 <option value='1'>Date</option>
+						 <option value='17'>Time</option>
+						 <option value='2'>HospID</option>
+						 <option value='3'>Patient Name</option>
+						 <option value='4'>age</option>
+						 <option value='5'>Gender</option>
+						 <option value='11'>Principal Surgeon</option>
+						 <option value='12'>First Asst</option>
+						 <option value='13'>Second Asst</option>
+						 <option value='14'>Supervisor</option>
+						 <option value='15'>Anaesthetic</option>
+						 <option value='16'>Scrub nurse</option>
+						
+					</select>
+					</td>
+					
+					<td ><span style="float:right;padding-right:25px;">Change To</span></td><td id="changetd"><input type="text" class="login-text-area" name="changeto" id="changeto" required ></td>
+					</td><td><td><input type="submit" class="adbtnalt " value="Submit" /></td></tr>
+					</form>
+					<tr>
+					<form action="/editloc" method="post">
+					<td >Edit Location</td>
+							<td><select name="primaryl"  id="primaryl" multiple>
+							
+							$for l in loc:
+								<option>$l.lname</option>
+							</select>
+							</span></td>
+							<td><select name="secl" id="secl" multiple required><option value=""></option></select></td>
+							<td><select name="terl" id="terl"  multiple required><option value=""></option></select></td>
+							<td ><select name="qual" id="qual" multiple  required><option value=""></option></select></td>
+							<td>
+						<input type="submit" class="adbtnalt " value="Submit" />
+							</td>
+					</form>
+					</tr>
+					
+					<tr>
+						<form action="/editdiag" method="post">
+						<td >Edit Diagnosis</td>
+						
+						
+							<td><select name="primaryd"  id="primaryd" multiple required>
+								
+							$for d in diag:
+								<option >$d.dname</option>
+							</select>
+							</td>
+							<td><select name="secd" id="secd" multiple required><option value=""></option></select></td>
+							<td><select name="terd" id="terd" multiple required><option value=""></option></select></td>
+							<td ><select  name="quad" id="quad" multiple required><option value=""></option></select></td>
+						<td><input type="submit" class="adbtnalt " value="Submit" />
+							</td>
+						</form>
+						</tr>
+
+						<form action="/editpro" method="post"><tr><td >Edit Procedure</td>
+											<td><select name="primaryp"  id="primaryp" multiple required>
+							$for p in proc:
+								<option>$p.pcname</option>
+							</select>
+							</td>
+							<td><select name="secp" id="secp" multiple required><option value="" ></option></select></td>
+							<td><select name="terp" id="terp" multiple required><option value=""></option></select></td>
+							<td ><select  name="quap" id="quap" multiple required><option value=""></option></select></td>
+											<td><input type="submit" class="adbtnalt " value="Submit" /></td></tr>
+										</form>		
+						<tr>
+						<form action="/editop" method="post"><td >Edit operative</td>
+						
+							<td>
+							<select name="opid">
+									$for op in opr:
+										<option >$op.opname</option>						
+									</select>
+								</td><td></td><td></td><td></td><td><input type="submit" class="adbtnalt " value="Submit" /></td></tr>
+						</form>
+						</tr>
+										
+										<tr>
+										<form action="/editsd" method="post">
+										<td >Edit side</td>
+											
+											<td >
+											<select name="sdid">
+												$for side in side:
+													<option >$side.sname</option>
+											</select>
+											</td>
+											</td><td></td><td></td><td></td><td><input type="submit" class="adbtnalt " value="Submit" /></td></tr>
+										</form>		
+										</tr>
+										
+										<tr>
+										<form action="/delreq" method="post">
+										<td >Delete Request</td>
+											
+											<td >
+											*
+											<input type="text" class="login-text-area" name="reason" placeholder="Reason for Request" required>
+											</td>
+											</td><td></td><td></td><td></td><td><input type="submit" class="adbtn" name="edit" value="Send Delete Request" /></td></tr>
+										</form>		
+										</tr>
+					
+			
+				
+				</tbody></table>
+				</div>
+				
+				<br />
+				
+				
+					
+							
+				</div>
+				
+		
+		</div>
+			
+				
+		
+			
+			
+			
+			
+		
+				
+		
+		
+			
+		
+
+		
+	
+	</body>
+</html>

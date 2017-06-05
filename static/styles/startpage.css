@@ -1,0 +1,86 @@
+
+/*************************START PAGE***********************************/
+/*****************************LOGO*****************************************/
+.startpage
+{background-color:#232323;background-image:radial-gradient(circle, rgb(35, 35, 35), rgb(17, 17, 17));
+}
+.homelogo
+{padding-right:10px;
+margin-left:620px;
+margin-top:-2px;
+}
+.hometitle
+{
+width:1200px;
+ font-family: ubuntu,arial;
+   font-weight: lighter;
+font-size:25px;
+padding-top:25px;
+color:white;
+}
+.title
+{
+margin-left:470px;
+margin-top:-10px;
+font-size:50px;
+}
+.startbody
+{min-height:350px;
+min-width:768px;
+margin-left:100px;
+margin-top:30px;
+}
+
+/*************************2.STARTPAGE-LOGINBOX************************/
+
+.login
+{width: 300px;
+margin-left:430px;
+height:275px;
+margin-top:25px;
+}
+.loginbox
+{
+    padding-bottom: 0px;
+    padding: 19px;
+   	height:275px;
+   background-color:#f1f1f1;background-image: linear-gradient(to bottom, #F0F0F0 0%, #E6E6E6 100%);
+  border:1px solid #E7E7E7;
+   border-radius: 5px;
+
+}
+
+form#login
+{ font-family: ubuntu,arial;
+padding :15px 10px 0px 0px;}
+
+.boxheading
+{
+color :#0099FF;
+
+ font-family: ubuntu,arial;
+   font-weight: normal;
+font-size:25px;
+
+}
+.loginbox label
+{color:black;
+}
+
+.alert
+{
+margin-left:140px;
+margin-top:-30px;
+font-weight: normal;
+ font-family: ubuntu,arial;
+color:#888A8B;
+font-size:12px;
+}
+.alert a{display:block;}
+.alert a:hover{text-decoration :underline;color : inherit;}
+#wrong
+{font-size:12px;
+color:RED;
+margin-top:4px;
+}
+/*****************footer**************************/

@@ -1,0 +1,13 @@
+.footer  {
+height: 35px;
+min-width: 100%;
+margin-bottom:0px;
+overflow: hidden;
+}
+.footer div
+{margin-left:530px;color:white;font-size: 0.85em; font-family: ubuntu,arial;
+white-space: nowrap;padding-top:10px;
+}
+.footeralt div
+{color:black;
+}

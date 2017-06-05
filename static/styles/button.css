@@ -1,0 +1,74 @@
+.signbutton {
+	
+	background-color:#89c403;
+	border-radius:6px;
+	border:1px solid #74b807;
+	display:inline-block;
+	color:#ffffff;
+	 font-family: ubuntu,arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:7px 17px;
+	text-decoration:none;
+	margin-top:50px;
+	
+	
+}.signbutton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #6d9908), color-stop(1, #89c403) );
+	background:-moz-linear-gradient( center top, #6d9908 5%, #89c403 100% );
+
+	background-color:#6d9908;
+}.signbutton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.btn
+{font-family:ubuntu,arial;background:transparent;border:0px;font-size:15px;}
+.btn:hover
+{color:red;cursor:pointer;}
+.button
+{margin-top:30px; margin-left:300px;}
+.addbutton
+{margin-top:20px;display:inline-block;width:100%;
+}
+.adbtn
+{margin-right:20px;float:right;
+background-color:#89c403;
+	color:#ffffff;
+	 font-family: ubuntu,arial;
+	font-size:15px;border:0px;
+	font-weight:200;
+	padding:7px 17px;}
+	.adbtn2{background-color:#e1e1e1;color:black;}
+.adbtn:hover
+{cursor:pointer;
+background-color:red;}.adbtn2:hover
+{cursor:pointer;
+background-color:#dc572e;}
+.adnot
+{background-color:#FC7A06;}
+.adbtnalt
+{margin-right:20px;float:right;
+background-color:#A2BEF1;
+	color:#ffffff;
+	 font-family: ubuntu,arial;
+	font-size:15px;border:0px;
+	font-weight:200;
+	padding:6px 17px;}
+	
+.adbtnalt:hover
+{cursor:pointer;
+background-color:red;}
+.sadbtn:active {
+	position:relative;
+	top:1px;
+}
+.addbtn
+{margin-left:10px;
+font-family:ubuntu,arial;background:transparent;border:0px;font-size:12px;}
+	
+.addbtn:hover
+{cursor:pointer;
+color:red;}

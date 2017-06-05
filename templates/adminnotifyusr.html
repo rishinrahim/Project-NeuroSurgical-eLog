@@ -1,0 +1,179 @@
+$def with (result)
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Administrator</title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/dashboard.css" type="text/css" rel="stylesheet" />		
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS |">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		<script>
+		  $$(function() {
+			var result=$$( ".adminbody" ).height();
+			
+			$$(".adm").height(result);
+			
+		  });
+		</script>
+		
+		  <script type="text/javascript" >
+		
+jQuery(document).ready(function()
+{
+  jQuery("#prid").bind('change click',function()
+  {
+    var pid =$$(this).val();
+	if(pid !='Surgeon')  
+     {
+	 jQuery.ajax
+      ({ 
+         type:"PUT",
+		 url:"/getcase",
+		 async: false,
+         data:{text:pid},
+		 dataType:"json",
+         success: function(regions)
+			{
+			
+			$$("#sed").empty();
+			$$.each(regions,function(index,region){$$("#sed").append("<option value="+region+">" + region + "</option>");});
+			}
+			
+	  });
+     }
+    else
+     {$$("#sed").empty();
+      jQuery("#sed").append("<option value='0'>-----</option>");
+     }
+    return false;
+  });
+ 
+})
+</script>
+		
+		
+		
+	</head>
+	
+	
+	<body >
+		<div class="wrapper">	
+			
+			<div class="pagetitle " >
+				
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical </span><span class="green"> eLog </span></div>
+				<span id="date"></span>
+			</div>		
+				
+			<div class="profiletab">
+					<div class="profile-name ">Administrator</div>	
+					
+					<div class="nav">
+					<ul>
+					<li ><a href="/admin">Dashboard</a></li>
+					<li id="bnone"><a href="/adminsettings">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+				</div>	
+			
+		
+				
+			
+			<div class="adminbody">
+					
+				<div class="adm">
+					<table class="stattable">
+					<tbody>				
+					<tr><td></td></tr>
+					<tr><td><a href="/admincreateuser">Create New user</a></td></tr>
+					<tr><td><a href="/adminedituser">Edit/delete user</a></td></tr>
+					<tr><td></td></tr>
+					<tr><td><a href="/adminlog">View Log</a></td></tr>
+					<tr><td><a href="/admineditlog">Edit/Delete Log</a></td></tr>
+					<tr><td><a href="/adminnotifyusr">Notify User</a></td></tr>
+					<tr><td></td></tr><tr><td><a href="/adminnotification">Notification</a></td></tr><tr><td></td></tr>
+					<tr><td><a href="/addsurgicaldetail">Add New Surgical Detail</a></td></tr>
+					<tr><td><a href="/adminviewsurgicaldetail">Edit/Delete Surgical Detail</a></td></tr>
+					</tbody></table>
+				</div>
+				
+				<div class="dashboard-details">
+				<div class="dashboard shead ">
+						<div class="sheadp"><img  src="/static/image/notify.png" height="22" width="22" style="padding-right:4px;" alt="icon">Notify User</div>
+						
+					</div>
+						<div class="create">
+					<table class="createprofile">
+							<tbody>				
+								<form method="POST">
+								<tr><td>Surgeon Name</td>
+								<td>
+								<span class="styled-select arrow select2">
+								<select name="option1" id="prid">
+									$for user in result:
+										<option>$user.name</option>
+								</select>
+								</span>
+								</td></tr>
+								<tr><td>Case No</td><td><span class="styled-select arrow select2">
+									<span class="styled-select arrow select2">
+								<select name="option2" id="sed">
+								<option value="0">---</option>
+								</select>  
+									</td></tr>					
+
+					<tr><td>Notify</td><td><span class="styled-select arrow select2"/>
+					<select name="editfield" id="editfield">
+					<option value='0'>Deleted</option>
+							<option value='15'>Edit Multiple Fields</option>
+						<option value='1'>Date/Time</option>
+						 <option value='2'>HospID</option>
+						 <option value='3'>Patient Name</option>
+						 <option value='4'>age</option>
+						 <option value='5'>Gender</option>
+						 <option value='11'>Principal Surgeon</option>
+						 <option value='12'>First Asst</option>
+						 <option value='13'>Second Asst</option>
+						 <option value='14'>Supervisor</option>
+						 <option value='6'>Location</option>
+						 <option value='7'>Diagnosis</option>
+						 <option value='8'>Procedure</option>
+						 <option value='9'>Operative</option>
+						 <option value='10'>Side</option>
+						 
+					</select></td></tr>
+					
+								
+								
+								<tr><td></td><td><input type="submit" class="adbtn " value="Notify" /></td></tr>
+								</form>
+							
+							</tbody>
+						</table>
+						</div>
+				</div>
+		
+		
+		
+		
+		
+	</div>
+		
+	
+	</body>
+</html>

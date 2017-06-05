@@ -1,0 +1,125 @@
+$def with(result)
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<head>
+		
+		<title>HeadNurse Alert </title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/dashboard.css" type="text/css" rel="stylesheet" />		
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="/static/styles/jquery-ui.css" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS |">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		
+  
+		</head>
+	
+	
+	<body >
+		<div class="wrapper">	
+			
+			<div class="pagetitle " >
+				
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical </span><span class="green"> eLog </span></div>
+				<span id="date"></span>
+			</div>		
+				
+			<div class="profiletab">
+					<div class="profile-name ">Head Nurse</div>	
+					
+					<div class="nav">
+					<ul>
+					<li ><a href="/headnurse">Dashboard</a></li>
+					
+					
+					<li id="bnone"><a href="/headsetting">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+				</div>	
+			
+			
+				
+				
+		
+				<div class="adminbody">
+				<div class="adm">
+					<table class="stattable">
+				<tbody>				
+				
+				
+				
+				
+				<tr><td><a href="/headviewlog">View Log</a></td></tr>
+				
+				
+				
+			
+				
+				</tbody></table>
+				</div>
+					
+				
+				
+				<div class="dashboard-details">
+					<div class="dashboard shead">
+					
+					<div class="sheadp"><img  src="/static/image/notif.png" height="22" width="22" style="padding-right:4px;" alt="icon">Alert</div></div>
+					
+					<div class="create">
+					
+						<table class="createprofile">
+							<tbody>				
+								<form method="POST">
+								<tr><td>Surgeon Name</td>
+								<td>
+								<span class="styled-select arrow select2">
+								<select name="name">
+									$for user in result:
+										<option>$user.name</option>
+								</select>
+								</span>
+								</td></tr>
+								<tr><td>Date Of Operation</td><td><input type="text" name="date" class="login-text-area2" id="datepicker" >
+								<input type="text" class="small-text-area" id="altdatepicker" name="time"></td>
+								
+								
+								<tr><td></td><td><input type="submit" class="adbtn " value="Alert" /></td></tr>
+								</form>
+							
+							</tbody>
+						</table>
+						
+					</div>
+				</div>
+				
+				
+						
+						
+				
+				
+			</div>
+		
+		
+		
+		
+		
+	</div>
+		
+	
+	</body>
+</html>

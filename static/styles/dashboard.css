@@ -1,0 +1,51 @@
+.dashboard
+{height:150px;border-bottom:1px solid #e1e1e1;min-width:1000px;}
+
+
+ul.dashboard_shortcut li {
+float: left;
+margin: 0 15px 0 0;
+padding: 0 !important;
+background: 0;
+margin-left:60px;
+margin-top:50px;
+list-style: none;
+}
+
+
+.shortcut{
+border: 1px solid #ccc;
+
+border-radius:3px;
+background: #f7f7f7 ;
+display: block;
+width: 110px;
+height:90px;
+margin: 0 0 20px;
+font-family:ubuntu,arial;
+font-size:13px;
+}
+
+.shortcut span
+{
+display: block;
+padding: 10px 10px 15px 10px;
+text-align: center;
+color: #555;
+font-size: 13px;
+line-height: 1.3em;}
+
+.shortcut-icon
+{height:38px;width:38px;}
+
+.shortcut:hover
+{background-color:white;
+}
+.shead
+{height:48px;
+}
+.sheadp
+{padding-left:200px;font-size:21px;font-weight:lighter;
+padding-top:15px;color:#838383;}
+.sheadv
+{padding-left:0px}

@@ -1,0 +1,161 @@
+$def with (result,name)
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>viewlog </title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="/static/styles/jquery-ui.css" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS |">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		
+	
+	
+	
+
+
+		</head>
+	
+	
+	<body >
+		<div class="wrapper">	
+			
+			<div class="pagetitle" >
+				
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical <span class="green"> eLog </div>
+				<span id="date">
+				
+				
+			</div>		
+				
+			<div class="profiletab">
+					<div class="profile-name"><a href="/surgeon">Dr. $name</a></div>	
+					
+					<div class="nav">
+					<ul>
+					
+					<li ><a href="/surgeonaddlog">Add Log</a></li>
+					<li ><a href="/surgeonviewlog">View Log</a></li>
+					<li ><a href="/surgeoneditlog">Edit log</a></li>
+					<li ><a href="/surgeonnotification">Alerts</a></li>
+					<li ><a href="/surgeonsetting">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+				</div>	
+			
+			
+				
+						<div class="pageheader">
+			
+	
+				<ul class="xxyy ">
+				
+				
+				<li><a href="/surgeonviewlog"><input type="button" value="Back" class="btn" /></a></li>
+				</ul>
+				
+				
+				
+				
+				
+			</div>
+				
+				
+		
+		
+			<div class="log-table-body expandview">
+				<table class="viewlogtable" >
+					<tbody>
+					<tr id="tablehead" >
+					<td id="col_1">Case No.</td>
+					<td id="col_2">Date</td>
+					<td id="col_2">Time</td>
+					
+					<td id="col_4">Hospital ID</td>
+					<td id="col_4">Patient Name</td>
+					<td id="col_1">Age</td>
+					<td id="col_4">G</td>
+					<td id="col_3">Primary Surg</td>
+					<td id="col_3">first asst</td>
+					<td id="col_3">second asst</td>
+					<td id="col_3">Supervisr</td>
+					<td id="col_11">Anst.</td>
+					<td id="col_11">scrub</td>
+										
+					<td id="col_8">Location Primary </td>
+					<td id="col_9">Location Secondary</td>
+					<td id="col_10">Location Tertiary/Quaternary</td>
+					
+					<td id="col_12">Diagnosis Primary</td>
+					<td id="col_13">Diagnosis Secondary</td>
+					<td id="col_14">Diagnosis Tertiary/Quatrnry </td>
+					
+					<td id="col_16">Procedure Primary</td>
+					<td id="col_17">Procedure secondary</td>
+					<td id="col_18">Procedure Tertiary/quatrnry</td>
+					<td id="col_15">Operative Procedure</td>
+					<td id="col_11">Side</td>
+					<td id="col_19">Log entry Time</td>
+					
+					</tr>
+				$for case in result:
+						<tr>
+						<td >$case.caseid</td>
+						<td >$case.date</td>
+						<td> $case.time</td>
+						
+						<td >$case.hospid</td>
+						<td >$case.pname</td>
+						<td >$case.page</td>
+						<td >$case.psex</td>
+						<td >$case.psid</td>					
+						<td >$case.faid</td>					
+						<td >$case.said</td>					
+						<td >$case.spid</td>
+						<td >$case.anst</td>					
+						<td >$case.scrub</td>
+						<td >$case.ploc</td>					
+						<td >$case.sloc</td>					
+						<td >$case.tloc/$case.qloc</td>	
+						<td >$case.pdiag</td>					
+						<td >$case.sdiag</td>					
+						<td >$case.tdiag/$case.qdiag</td>
+						<td >$case.ppro</td>					
+						<td >$case.spro</td>					
+						<td >$case.tpro/$case.qpro</td>		
+						<td >$case.opid</td>					
+						<td >$case.sdid</td>
+						<td >$case.logtime</td>
+						</tr>	
+					
+					
+					</tbody>
+				</table>			
+				
+				
+			</div>
+		
+		
+	
+		
+		
+		
+	</div>
+		
+	
+	</body>
+</html>

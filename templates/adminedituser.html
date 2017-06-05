@@ -1,0 +1,177 @@
+$def with (data,data1)
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Admin Dashboard </title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/dashboard1.css" type="text/css" rel="stylesheet" />		
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS |">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		<script type="text/javascript" >
+		function ConfirmDelete()
+{
+  var x = confirm("Are you sure you want to delete?");
+  if (x)
+      return true;
+  else
+    return false;
+}
+</script>
+		</head>
+	
+	
+	<body>
+		<div class="wrapper">	
+			
+			<div class="pagetitle " >
+				
+				<div class="imagelogo"><img src="/static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical </span><span class="green"> eLog </span></div>
+				<span id="date"><script type="text/javascript" ></script>
+				</span>
+			</div>		
+				
+			<div class="profiletab">
+					<div class="profile-name ">Administrator</div>	
+					
+					<div class="nav">
+					<ul>
+					<li ><a href="/admin">Dashboard</a></li>
+					<li id="bnone"><a href="/adminsettings">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+				</div>	
+				
+			
+				
+				
+		
+				
+					
+				
+				
+				
+				<div class="dashboard-details">
+				
+				
+				
+			<div class="dashboard">
+				
+			<ul class="dashboard_shortcut">
+					<li><a class="shortcutalt" href="/admincreateuser"><span>
+						<img class="shortcut-icon" src="/static/image/add.png" alt="icon"><br>
+						Create New user
+					</span></a></li>
+					
+					<li><a class="shortcutalt" href="/adminedituser"><span>
+						<img class="shortcut-icon" src="/static/image/ed.png" alt="icon"><br>
+						 Edit/Delete user
+					</span></a></li>
+										
+					<li><a class="shortcutalt" href="/adminlog"><span>
+						<img class="shortcut-icon" src="/static/image/view.png" alt="icon"><br>
+						 View log
+					</span></a></li>
+					<li><a class="shortcutalt" href="/admineditlog"><span>
+						<img class="shortcut-icon" src="/static/image/edit1.png" alt="icon"><br>
+						 Delete log
+					</span></a></li>
+					<li><a class="shortcutalt" href="/adminnotification"><span>
+						<img  class="shortcut-icon" src="/static/image/notif.png" height="30" width="30" alt="icon"><br>
+						Alert Notification
+					</span></a></li>
+					<li><a class="shortcutalt" href="/adminnotification2"><span>
+						<img  class="shortcut-icon" src="/static/image/notify.png" height="30" width="30" alt="icon"><br>
+						Delete Requests
+					</span></a></li>
+									
+					
+					</ul>
+				
+				</div>
+				<div class="dashboard shead"><div class="sheadp"><img  src="/static/image/ed.png" height="22" width="22" style="padding-right:4px;" alt="icon">Edit/Delete User</div></div>
+				<div class="pageheader phr">
+					<form method="POST"> 
+						<div  style="margin-left:150px;">
+						<span class="styled-select arrow select2">
+						<select name="edituser" required>
+						<option value="">--Users--</option>
+						 $for user1 in data:
+							<option>$user1.name</option>
+						</select>
+						</span>
+						<input type="submit" value="Delete" class="adbtn" name="submit"  onclick="return ConfirmDelete();return false;"/>
+						
+						
+						
+						
+					
+					
+						</div>
+						
+						<div class="vlaa" style="padding-left:10px;">
+						<span class="styled-select ">
+						<select name="editoption" >
+							<option value="1">Change Username</option>
+							<option value="2">Change Password</option>
+							<option value="3">Change Name</option>
+						</select>
+						</span>
+						&nbsp;
+						&nbsp;
+						<input type="text"  class="login-text-area" name="flag"  />
+						
+						<input type="submit" value="update" class="btn" name="submit" />
+						</form>
+					</div>	
+					
+					</form>
+				</div>
+				
+				
+					<div >
+						
+						<table class="last edituser" >
+						<tbody>				
+							<tr ><td id="sd4" style="font-weight:800;width:80px;"> Type </td><td id="head34" >Name </td><td id="head34" >Username</td></tr>
+							
+						$for users in data1:
+							<tr><td >$users.utype </td><td >$users.name</td><td >$users.uname</td></tr>
+										
+						</tbody></table>
+						
+					</div>
+				
+				</div>
+				</div>
+				
+				
+						
+						
+				
+				
+				</div>
+		
+		
+		
+		
+		
+
+		
+	
+	</body>
+</html>

@@ -1,0 +1,70 @@
+$def with (value)
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Neurosurgical eLOG</title>
+		<meta name="author" content="Rishin Rahim | Anjitha RS @ IIITMK ">
+		<meta charset="UTF-8">
+		
+		<!--Styles-->
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/startpage.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		
+		
+		<script src="/static/jquery-1.10.2.js"></script>
+		
+		
+	<script>
+	$$(document).ready(function()
+		{		if($value==1)
+			{				
+				document.getElementById("wrong").innerHTML = "Wrong Username or Password";
+			}
+		
+		});
+	</script>
+	
+	</head>
+	
+	
+	<body class="startpage"  >
+		<div class="wrapper">
+			
+			<div class="hometitle">
+				<div class="homelogo"><img src="/static/image/logo.png" height="100" alt="logo" > </div>
+				<div class="title"> <span class="blue"> Neurosurgical </span><span class="green"> eLog </span></div>
+			</div>	
+			
+			<div class="startbody">
+				<div class="login">
+					<div class="loginbox"  >
+			
+						<p class="boxheading">Sign in</p>
+				
+							<form method="POST" name="login" >
+							<label for="username">Username </label><input type="text" name="username" class="login-text-area" required/> <br/><br/>
+							<label for="password">Password </label><input type="password" name="password" class="login-text-area" required/> 
+							<div id="wrong"></div> 
+							<input type="submit" value="Sign In" class="signbutton" >
+							 </p>
+							</form>
+			
+					</div>
+				</div>
+			</div>
+			
+		
+			<div class="footer"	>
+				<div>NeuroSurgical eLog&copy;2013 | Developed by IIITMK</div>
+			</div>
+		
+		</div>
+		
+	
+	</body>
+</html>

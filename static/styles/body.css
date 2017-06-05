@@ -1,0 +1,215 @@
+/**************************html Body Properties*****************/
+/**************************************************************/
+html, body {
+    position: absolute; min-height: 100%;    min-width: 100%;}
+
+html {  background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    font-family: ubuntu,arial;
+    direction: ltr;}
+	
+html, body, div, h1, h2, h3, h4, h5, h6, p, img, dl, dt, dd, ol, ul, li, table, tr, td, form, object, embed, article, aside, canvas, command, details, fieldset, figcaption, figure, footer, group, header, hgroup, legend, mark, menu, meter, nav, output, progress, section, summary, time, audio, video 
+{    margin: 0px;    padding: 0px;    border: 0px none;	color:black;}
+
+a:link,a:visited {text-decoration :none;
+color :inherit;
+}
+
+a:hover
+{cursor: pointer;}
+
+.green
+{color:#89c403;}
+
+.blue
+{color:#0099FF;}
+.edit-title
+{height:30px;width:1000px;border-bottom:1px solid #e1e1e1;}
+
+	
+.wrapper {
+    min-height:100%;
+	min-width:768px;
+	}
+
+/**************************************/
+/*******************TITLE HEADER*****************************************/
+.pagetitle
+{
+left :-10px;right :0px;
+font-size: 17px ; background-color:#232323;
+background-image: linear-gradient(to bottom right, #000000 0%, #3B3B3B 100%);
+height:30px;
+}
+.imagelogo
+{width:30px;
+margin-left:20px;
+float:left;
+margin-top:3px;
+}
+
+#date
+{float:right;
+font-size:13px;
+color:white;margin-top:7px;
+margin-right:20px;
+}
+.logotitle
+{float:left;
+ font-family: ubuntu,arial;
+font-size:17px;
+margin-top:5px;
+color:#0099FF;
+font-weight:100;
+}
+
+/*********************PROFILETAB**************************************/
+/******************************NAVIGATION BAR****************************************/
+
+.profiletab
+{
+height:35px;
+background-color:#89c403;
+
+}
+.profile-name
+{
+color:white;
+font-size: 17px ;
+font-weight:100;
+float:left;padding-top: 7px;
+}
+
+.nav ul
+{background-color:#0099FF;
+height:35px;
+float:right;
+list-style-type:none;
+display: inline-table;
+box-shadow: -3px 0px  9px rgba(0,0,0,0.15);
+
+
+}
+.nav ul:after {
+		content: ""; clear: both; display: block;
+	}
+.nav ul li
+{color: white;
+position: relative;
+font-size: 15px;
+font-family: ubuntu,arial;
+font-weight:400;
+float: left;height:35px;
+width:130px;
+border-right:1px solid #4080EC;
+
+text-align:center;
+line-height:30px;
+}
+.nav ul li a
+{display: block;
+}
+.nav ul li:hover {
+	background-color:#014CC1;
+	cursor: pointer;}
+	
+	nav ul li:active{
+	background-color:#014CC1;
+	cursor: pointer;}
+	
+
+#red
+{background-color:#DF0024;border:0px;
+}
+#red:hover
+{background-color:red;}
+#bnone{border:0px;}
+
+.plogo
+{float: left;margin-top:5px;
+padding-right: 7px;}
+
+
+/***********PAGE HEADER SEARCHBAR PRINT/EXPORT***************/
+/**********************************************************************/
+.pageheader
+{padding-top:5px;
+padding-left:50px;
+font-size: 17px ;
+background-color:#e1e1e1;
+height:40px;
+
+}
+.phr
+{height:80px;}
+.phr2
+{height:150px;margin-bottom:0px;}
+.xxyy
+{font-weight:100;
+list-style-type:none;
+float:right;
+margin-right:20px;
+margin-top:3px;
+padding-right:5px;
+}
+
+.xxyy li
+{color:black;
+position:relative;
+padding: 0px 0px 0px 0px;
+float:left;
+width:90px;
+text-align:center;
+height:30px;
+}
+
+.xxyy li:hover
+{color:red;cursor:pointer;}
+
+.viewlog
+{float:left;
+display:inline;}
+
+
+/**sidepaneliin**/
+.editlog
+{
+display:inline;
+margin-left:50px;
+width:500px;
+}
+/**/
+.viewlogo
+{float:left;
+margin-left:1px;
+
+}
+.viewlogo:hover
+{height:31px;width:31px;
+}
+.vlaa
+{float:left;
+}
+.vlar
+{float:left;margin-left:400px;
+}
+/************************SIDEPANEL*********************/
+.adm
+{float:left;box-shadow: inset -2px 1px 9px -6px ;
+background: #f1f1f1 ;height:100%;min-height:610px;width:170px;border:1px solid #d1d1d1;border-top:0px; }
+.adm2
+{float:left;box-shadow: inset -2px 1px 9px -6px ;
+background: #f1f1f1 ;height:100%;min-height:610px;width:160px;border:1px solid #d1d1d1;border-top:0px; }
+
+::selection
+{
+color:#f1f1f1;
+}
+::-moz-selection
+{
+color:#f1f1f1;
+}
+#wrongs
+{
+color:RED;
+margin-top:4px;
+}

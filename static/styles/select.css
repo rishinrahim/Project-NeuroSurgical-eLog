@@ -1,0 +1,78 @@
+/****************************1.SELECT DIV************************/
+select
+{min-width:250px;
+max-width:400px;
+font-weight:800;
+min-height:30px;
+font-size:13px;
+
+}
+select:hover { background-color:#f1f1f1; }
+.selectf{font-size:12px;}
+.styled-select select {
+   background: transparent;
+   width: 173px;
+   padding:1px;
+   font-family:ubuntu,arial;
+   font-weight:100;
+   font-size: 13px;
+ 
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+   .styled-select2 select {
+   background: transparent;
+   width: 183px;
+   padding:1px;
+   font-family:ubuntu,arial;
+   font-weight:100;
+   font-size: 13px;
+ 
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+   .selectbig select
+   {width:410px;}
+   .select2 select
+   {width:288px;
+   } 
+   .select3 select
+   {width:133px;
+   }
+   .select4 select
+   {width:213px;}
+   .select45 select
+   {width:190px;}
+   
+   .styled-select {
+   width: 155px;
+   height: 31px;
+   overflow: hidden;
+   border: 1px solid #ccc;
+ background: url(../image/arrow.jpg)  no-repeat right white;  
+   float:left;
+   
+   }
+   .styled-select2 {
+   width: 165px;
+   height: 31px;
+   overflow: hidden;
+   border: 1px solid #ccc;
+   float:left;
+     
+   }
+      .selectbig
+   {width:380px;}
+   .select2{
+   width:255px;}
+     .select3
+   {width:100px;
+   
+  }
+  .select4
+  {width:197px;}
+  

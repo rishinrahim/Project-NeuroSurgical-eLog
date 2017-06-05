@@ -1,0 +1,201 @@
+$def with (result)
+<!DOCTYPE html>
+<html>
+			<title>Admin</title>		
+		<link rel="shortcut icon" href="/static/favicon.ico" type="/static/image/x-icon">
+		<link href="/static/styles/main.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/body.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/dashboard1.css" type="text/css" rel="stylesheet" />		
+		<link href="/static/styles/table.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/select.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/textarea.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/footer.css" type="text/css" rel="stylesheet" />
+		<link href="/static/styles/button.css" type="text/css" rel="stylesheet" />
+		<meta name="author" content="Rishin Rahim | Anjitha RS |">
+		<meta charset="UTF-8">
+		<script src="/static/jquery-1.10.2.js"></script>
+		<script src="/static/jquery-ui.js"></script>
+		<script src="/static/jquery-ui-timepicker-addon.js"></script>
+		<script type="text/javascript" src="/static/myscript.js"></script>
+		<style type="text/css" media="print">
+			@page { size: landscape; }
+		</style>
+		<style> @media only print
+{
+    .pagetitle,.profiletab,.pageheader,.dashboard{ display:none; }
+	
+}  </style>
+<script type="text/javascript">
+var tableToExcel = (function() {
+  var uri = 'data:application/vnd.ms-excel;base64,'
+    , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+    , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+    , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+  return function(table, name) {
+    if (!table.nodeType) table = document.getElementById(table)
+    var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+    window.location.href = uri + base64(format(template, ctx))
+  }
+})()
+</script>  
+		</head>
+  
+		
+	
+	
+	<body >
+		<div class="wrapper">	
+			
+			<div class="pagetitle " >
+				
+				<div class="imagelogo"><img src="static/image/logo.png" height="25" alt="logo" /> 	</div>
+				<div class="logotitle"><span class="blue"> Neurosurgical </span><span class="green"> eLog </span></div>
+				<span id="date"><script type="text/javascript" >
+				
+				</script>
+				</span>
+			</div>		
+				
+			<div class="profiletab">
+					<div class="profile-name ">Administrator</div>	
+					
+					<div class="nav">
+					<ul>
+					<li ><a href="/admin">Dashboard</a></li>
+					<li id="bnone"><a href="/adminsettings">Settings</a></li>
+					<li id="red"><a href="/logout">Log out</a></li>
+					</ul>
+					</div>
+										
+			</div>
+				
+			
+			<div class="adminbody">
+						<div class="dashboard">
+				
+			<ul class="dashboard_shortcut">
+					<li><a class="shortcutalt" href="/admincreateuser"><span>
+						<img class="shortcut-icon" src="/static/image/add.png" alt="icon"><br>
+						Create New user
+					</span></a></li>
+					
+					<li><a class="shortcutalt" href="/adminedituser"><span>
+						<img class="shortcut-icon" src="/static/image/ed.png" alt="icon"><br>
+						 Edit/Delete user
+					</span></a></li>
+										
+					<li><a class="shortcutalt" href="/adminlog"><span>
+						<img class="shortcut-icon" src="/static/image/view.png" alt="icon"><br>
+						 View log
+					</span></a></li>
+					<li><a class="shortcutalt" href="/admineditlog"><span>
+						<img class="shortcut-icon" src="/static/image/edit1.png" alt="icon"><br>
+						 Delete Log
+					</span></a></li>
+					<li><a class="shortcutalt" href="/adminnotification"><span>
+						<img  class="shortcut-icon" src="/static/image/notif.png" height="30" width="30" alt="icon"><br>
+						Alert Notification
+					</span></a></li>
+					<li><a class="shortcutalt" href="/adminnotification2"><span>
+						<img  class="shortcut-icon" src="/static/image/notify.png" height="30" width="30" alt="icon"><br>
+						Delete Requests
+					</span></a></li>
+									
+					
+					</ul>
+				
+				</div>	
+		
+						<div class="dashboard shead ">
+						<div class="sheadp"><img  src="/static/image/view.png" height="22" width="22" style="padding-right:4px;" alt="icon">View Log</div>
+						</div>
+				
+						<div class="pageheader ">
+			
+	
+							<ul class="xxyy ">
+							
+							<li><input type="button" value="Print" class="btn"  onClick="window.print()" /></li>
+							<li><input type="button" value="Export" onclick="tableToExcel('viewlogtable')" class="btn" /></li>
+				
+							
+							</ul>
+				
+						<div class="viewlog">
+				<form method="post">
+						<input type="text" class="login-text-area lta" name="search" required/>
+						
+						<input type="submit" class="adbtnalt" value="search" />
+					</form>
+				</div>
+				
+			
+						</div>
+						
+				<div class="log-table-body">
+				<table class="viewlogtable collapse" id="viewlogtable">
+					<tbody>
+					<tr id="tablehead" >
+					<td id="col_1">Case ID</td>
+					<td id="col_2">Date</td>
+					<td id="col_2">Time</td>
+					<td id="col_3">Hospital ID</td>
+					<td id="col_4">Patient Name</td>
+					<td id="col_3">Age</td>
+					<td id="col_3">G</td>
+					<td id="col_8">Primary Surgeon</td>
+					<td id="col_9">Asst I</td>
+					<td id="col_10">Asst II</td>
+					<td id="col_17">Suprvisr</td>
+					<td id="col_11">Anst.</td>
+					<td id="col_11">scrub</td>
+					<td id="col_12">Location</td>
+					<td id="col_12">Diagnosis</td>
+					<td id="col_12">Operative</td>
+					<td id="col_12">Procedure</td>
+					<td id="col_17">Side</td>
+					
+
+					$for case in result:
+						<tr>
+						<td >$case.caseid</td>
+						<td >$case.date</td>
+						<td> $case.time</td>
+						<td >$case.hospid</td>
+						<td >$case.pname</td>
+						<td >$case.page</td>
+						<td >$case.psex</td>
+						<td >$case.psid</td>					
+						<td >$case.faid</td>					
+						<td >$case.said</td>					
+						<td >$case.spid</td>					
+						<td >$case.anst</td>					
+						<td >$case.scrub</td>					
+						<td >$case.floc</td>					
+						<td >$case.fdiag</td>					
+						<td >$case.opid</td>					
+						<td >$case.fpro</td>					
+						<td >$case.sdid</td>
+						
+						</tr>
+						
+					
+					
+					
+					
+					
+					</tbody>
+				</table>			
+					</div>
+			
+		
+		
+		
+		
+		
+		
+	</div>
+		
+	
+	</body>
+</html>

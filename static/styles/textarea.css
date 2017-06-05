@@ -1,0 +1,28 @@
+/*****************TEXT AREA************/
+.login-text-area
+{
+height:25px;
+width :250px;
+}
+.login-text-area2
+{
+height:25px;
+width :150px;
+}
+
+.lta
+{height:25px;
+width :358px;
+margin-left:10px;
+float:left;}
+
+.small-text-area
+{height :27px;width :100px;}
+
+.mesg
+{margin-top:30px;
+padding-left:7px;
+font-size:14px;
+font-weight:100;height:75px;padding-right:5px;
+font-family:ubuntu,arial;
+}
