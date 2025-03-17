@@ -54,7 +54,7 @@ urls = (
 try:
     db=web.database(dbn='sqlite',db='log.db')
 except:
-    print 'Could not open database...'
+    print('Could not open database...')
     sys.exit()
 
 #web.config.debug = False
@@ -167,7 +167,7 @@ class Admin_viewusr:
         if inp.edituser!=0:
             if inp.submit=='Delete':
                 myvar=dict(t=inp.edituser)
-                print inp.edituser
+                print(inp.edituser)
                 result=db.query('DELETE FROM users WHERE name=$t',myvar)
                 web.seeother('/adminedituser')
             else:
@@ -576,7 +576,7 @@ class Editreq:
             if inp.editfield=='2':
                 result=db.query('update caselog set hospid=$t1 where caseid=$t',myvar)
             if inp.editfield=='3':
-                print inp.changeto
+                # print inp.changeto
                 result=db.query('update caselog set pname=$t1 where caseid=$t',myvar)
             if inp.editfield=='4':
                 result=db.query('update caselog set page=$t1 where caseid=$t',myvar)
